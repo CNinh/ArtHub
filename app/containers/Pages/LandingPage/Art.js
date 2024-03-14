@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from 'react'
-import { ArtList } from '../Forms/ArtList';
+import axios from 'axios';
 import ArtItem from './ArtItem';
 import './index.css'
-
 const Art = () => {
+  const [artList, setArtList] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/v1/auth/random')
+      .then(response => {
+        const data = response.data;
+        setArtList(data);
+      })
+      .catch(error => {
+        console.error('Error fetching art list!', error);
+      });
+  }, []);
+
   return (
     <div className='art-section'>
       <h1 className='title'>Gallery</h1>
       <div className='art-list'>
-        {ArtList.map((artItem, key) => (
-          <ArtItem
-            key={key}
-            artist={artItem.artist}
-            art={artItem.Art}
-            publicDate={artItem.publicDate}
-            view={artItem.view}
-            like={artItem.like}
-            comment={artItem.comment}
-          />
-        ))}
+        {artList && artList.length > 0 ? (
+          artList.map((artItem, index) => (
+            <ArtItem
+              key={index}
+              item={artItem}
+            />
+          ))
+        ) : (
+          <h3>No artworks available!</h3 >
+        )}
       </div>
     </div>
   );
