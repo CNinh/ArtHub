@@ -1,0 +1,227 @@
+.navbar-section {
+  background-color: #252525;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-section .navbar-logo {
+  width: 10%;
+  height: 20%;
+}
+
+.navbar-section .navbar-link {
+  flex: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.navbar-section .navbar-link a {
+  margin-left: 20px;
+  padding: 2px 5px;
+  text-decoration: none;
+  color: #a0a0a0;
+}
+
+.navbar-section .navbar-link a:hover::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.5s;
+  padding: 0 10px;
+}
+
+.navbar-section .navbar-link a:hover {
+  color: #fff;
+}
+
+.navbar-section .search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 20%;
+  border-radius: 10px;
+  height: 2rem;
+  padding: 0 15px;
+  margin-left: 50px;
+}
+
+.navbar-section .search-bar input {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-left: 5px;
+}
+
+navbar-section .search-bar input:focus {
+  outline: none;
+}
+
+.navbar-section .search-bar #search-icon {
+  margin-left: -5px;
+}
+
+.navbar-section .login-signup {
+  flex: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+.navbar-section .login-signup button {
+  margin-left: 20px;
+  padding: 12px 30px;
+  background-color: transparent;
+  border: 0.2px solid #c4c2c2;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #a0a0a0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-signup button:hover {
+  background-color: #ff3c78;
+  color: #fff;
+}
+
+
+.hero-background {
+  background-image: url('../../../api/images/background_img.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 580px;
+  position: relative;
+}
+
+.hero-background::before {
+  content: '';
+  background-image: url('../../../api/images/background_img.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(1.3px);
+  /* Áp dụng hiệu ứng mờ cho phần nền */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(0, 0, 0, 1);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  z-index: 1; /* Đảm bảo phần content hiển thị trên phần nền */
+  text-align: center;
+  color: #acabab;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero-content button {
+  border: 0.2px solid #faebd7;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #faebd7;
+}
+
+.hero-content button:hover {
+  background-color: #778899;
+}
+
+.art-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.art-section .title {
+  font-family: 'Arial', sans-serif;
+  font-size: 60px;
+}
+
+.art-section .art-list {
+  width: 70vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+}
+
+.art-item {
+  border-radius: 15px;
+  width: 250px;
+  height: 350px;
+  margin: 20px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.art-item:hover {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.art-item h1, .art-item p {
+  font-size: 80%;
+  margin-left: 20px;
+}
+
+.art-item .hr-line {
+  border: none;
+  border-top: 1px solid #a0a0a0;
+  margin: 20px;
+}
+
+.art-item .card-bottom ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  color: #a0a0a0;
+}
+
+.footer-section {
+  width: 100%;
+  height: 100%;
+  background-color: #252525;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-section .footer-name {
+  color: #fff;
+  margin: 20px;
+  text-align: center;
+}
+
+.footer-section .social-media {
+  display: flex;
+  gap: 10px;
+  color: #fff;
+  margin: 20px;
+}
